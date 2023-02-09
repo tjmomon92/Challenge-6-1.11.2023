@@ -4,19 +4,17 @@ var searchButton = document.querySelector(".search-btn");
 function newCity() {
     var userEntry = document.querySelector("#city-entry").value;
     if (userEntry === "") {
-        userEntry = "anonymous";
+        console.log('Error: No data entered');
     }
     localStorage.setItem(userEntry, userEntry);
-};
-
-// Function to populate city search from localStorage
-function printCity() {
-    document.querySelector(".city-data").textContent = " ";
-    for (let i = 0; i< localStorage.length; i++) {
-        var p = document.createElement("p");
-        var city = localStorage.key(i);
-        p.textContent = city;
-        document.querySelector(".city-data").appendChild(p);
+    if (userEntry !== "") {
+        document.querySelector(".city-data").textContent = " ";
+        for (let i = 0; i< localStorage.length; i++) {
+            var b = document.createElement("button");
+            var city = localStorage.key(i);
+            b.textContent = city;
+            document.querySelector(".city-data").appendChild(b);
+        }
     }
 };
 
@@ -24,5 +22,4 @@ function printCity() {
 searchButton.addEventListener("click", function(event) {
     event.preventDefault();
     newCity();
-    printCity();
 });
