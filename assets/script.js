@@ -5,10 +5,11 @@ function newCity() {
     var userEntry = document.querySelector("#city-entry").value;
     if (userEntry === "") {
         console.log('Error: No data entered');
-    }
-    localStorage.setItem(userEntry, userEntry);
-    if (userEntry !== "") {
-        document.querySelector(".city-data").textContent = " ";
+    } else {
+        if (userEntry !== "") {
+            localStorage.setItem(userEntry, userEntry);
+            document.querySelector(".city-data").textContent = " ";
+        }
         for (let i = 0; i< localStorage.length; i++) {
             var b = document.createElement("button");
             var city = localStorage.key(i);
