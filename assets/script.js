@@ -28,9 +28,6 @@ function newCity() {
             .then(response => { return response.json() })
             .then(function (response) {
                 console.log(response);
-                console.log(response.city.name);
-            // })
-            // .then(response => {
 
                 // ** extract all API data
                 const nameOfCity = response.city.name;
@@ -154,6 +151,23 @@ function newCity() {
                 containerDay4.appendChild(resultDivWind4);
                 containerDay4.appendChild(resultDivHumid4);
 
+                const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
+                // const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@4x.png";
+
+                // const imageCurrent = document.getElementById('imageCurrent');
+                // document.getElementById('imageCurrent').src = imageCurrent.src.replace(day1Icon);
+
+                // imageCurrent.setAttribute("src", day1Icon);
+                // const imageCurrent = document.getElementById('imageCurrent');
+                // icon1.setAttribute("src", day1Icon);
+
+                const resultIcon = document.createElement('img');
+                resultIcon.src = day1Icon;
+                containerTodayRight.appendChild(resultIcon);
+
+                console.log(day1Icon);
+
+
             })
 
             .catch(error => {
@@ -175,11 +189,11 @@ function saveCity(parameter) {
         // b.setAttribute('class', 'buttons');
         b.classList.add('city-button');
     }
-    document.querySelector(".city-data").addEventListener("click", function (event) {
-        event.preventDefault;
-        newCity(event.target.innerText)
-        saveCity(event.target.innerText)
-    })
+    // document.querySelector(".city-data").addEventListener("click", function (event) {
+    //     event.preventDefault;
+    //     newCity(event.target.innerText)
+    //     saveCity(event.target.innerText)
+    // })
 };
 
 // prevents search data from disappearing on page refresh
