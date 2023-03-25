@@ -18,16 +18,23 @@ function newCity() {
             localStorage.setItem(userEntry, " ");
             document.querySelector(".city-data").textContent = " ";
         }
-        //  fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q=${parameter}&limit=3&appid=d769864f4813769c7a82a33216c211e2`)
-         fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?q=${userEntry}&limit=3&appid=d769864f4813769c7a82a33216c211e2`)
-             .then(data=>{return data.json()})
-             .then(response=> {
-                fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${response[0].lat}&lon=${response[0].lon}&appid=d769864f4813769c7a82a33216c211e2`)
-                .then(finalResponse=>{
-                console.log(finalResponse)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast/?q=${userEntry}&units=imperial&APPID=d769864f4813769c7a82a33216c211e2`)
+            .then(data => {return data.json()})
+            .then(function (data) {
+            console.log(data);
+        })
+
+
                 //write dom stuff here
-                })
-            })
+                // const container = document.getElementById('left');
+                // container.innerHTML= '';
+
+                // const resultDiv = document.createElement('div');
+                // resultDiv.classList.add('result');
+
+                // resultDiv.textContent = ``
+                // })
+            // })
      .catch(error => {
          console.log(error);
      })
