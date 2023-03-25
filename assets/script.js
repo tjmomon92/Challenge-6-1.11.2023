@@ -18,6 +18,7 @@ function newCity() {
             localStorage.setItem(userEntry, " ");
 
             document.getElementById('left').textContent = '';
+            document.getElementById('right').textContent = '';
             document.getElementById('day1').textContent = '';
             document.getElementById('day2').textContent = '';
             document.getElementById('day3').textContent = '';
@@ -25,18 +26,42 @@ function newCity() {
         }
         fetch(`https://api.openweathermap.org/data/2.5/forecast/?q=${userEntry}&units=imperial&APPID=d769864f4813769c7a82a33216c211e2`)
             .then(response => { return response.json() })
-            .then(function (data) {
-                console.log(data);
-            })
-            .then(data => {
+            .then(function (response) {
+                console.log(response);
+                console.log(response.city.name);
+            // })
+            // .then(response => {
 
-                // ** extract all yuor data
-                // const nameOfCity = data.city.name;
-                // const dateOfFirstIndex = data.list[0].dt_txt;
+                // ** extract all API data
+                const nameOfCity = response.city.name;
+                const dateOfFirstIndex = response.list[0].dt_txt;
+                const tempOfFirstIndex = response.list[0].main.temp;
+                const windOfFirstIndex = response.list[0].wind.speed;
+                const humidOfFirstIndex = response.list[0].main.humidity;
+                const outlookOfFirstIndex = response.list[0].weather[0].description;
 
+                const dateOfIndex7 = response.list[7].dt_txt;
+                const tempOfIndex7 = response.list[7].main.temp;
+                const windOfIndex7 = response.list[7].wind.speed;
+                const humidOfIndex7 = response.list[7].main.humidity;
 
+                const dateOfIndex15 = response.list[15].dt_txt;
+                const tempOfIndex15 = response.list[15].main.temp;
+                const windOfIndex15 = response.list[15].wind.speed;
+                const humidOfIndex15 = response.list[15].main.humidity;
+
+                const dateOfIndex23 = response.list[23].dt_txt;
+                const tempOfIndex23 = response.list[23].main.temp;
+                const windOfIndex23 = response.list[23].wind.speed;
+                const humidOfIndex23 = response.list[23].main.humidity;
+
+                const dateOfIndex31 = response.list[31].dt_txt;
+                const tempOfIndex31 = response.list[31].main.temp;
+                const windOfIndex31 = response.list[31].wind.speed;
+                const humidOfIndex31 = response.list[31].main.humidity;
 
                 const containerToday = document.getElementById('left');
+                const containerTodayRight = document.getElementById('right');
                 const containerDay1 = document.getElementById('day1');
                 const containerDay2 = document.getElementById('day2');
                 const containerDay3 = document.getElementById('day3');
@@ -47,6 +72,7 @@ function newCity() {
                 const resultDivWind = document.createElement('div');
                 const resultDivHumid = document.createElement('div');
                 const resultDivCity = document.createElement('div');
+                const resultDivOutlook = document.createElement('div');
 
                 const resultDivDate1 = document.createElement('div');
                 const resultDivTemp1 = document.createElement('div');
@@ -73,37 +99,40 @@ function newCity() {
                 // resultDivWind.classList.add('result');
                 // resultDivHumid.classList.add('result');
 
-                resultDivCity.textContent = `City: Test`
-                resultDivDate.textContent = `Date: Test`;
-                resultDivTemp.textContent = `Temp: Test`;
-                resultDivWind.textContent = `Wind: Test`;
-                resultDivHumid.textContent = `Humidity: Test`;
+                resultDivCity.textContent = 'City: ' + nameOfCity;
+                resultDivDate.textContent = 'Date: ' + dateOfFirstIndex;
+                resultDivTemp.textContent = 'Temp: ' + tempOfFirstIndex;
+                resultDivWind.textContent = 'Wind Speed: ' + windOfFirstIndex;
+                resultDivHumid.textContent = 'Humidity: ' + humidOfFirstIndex;
+                resultDivOutlook.textContent = 'Outlook: ' + outlookOfFirstIndex;
 
-                resultDivDate1.textContent = `Date: Test`;
-                resultDivTemp1.textContent = `Temp: Test`;
-                resultDivWind1.textContent = `Wind: Test`;
-                resultDivHumid1.textContent = `Humidity: Test`;
+                resultDivDate1.textContent = 'Date: ' + dateOfIndex7;
+                resultDivTemp1.textContent = 'Temp: ' + tempOfIndex7;
+                resultDivWind1.textContent = 'Wind: ' + windOfIndex7;
+                resultDivHumid1.textContent = 'Humidity: ' + humidOfIndex7;
 
-                resultDivDate2.textContent = `Date: Test`;
-                resultDivTemp2.textContent = `Temp: Test`;
-                resultDivWind2.textContent = `Wind: Test`;
-                resultDivHumid2.textContent = `Humidity: Test`;
+                resultDivDate2.textContent = 'Date: ' + dateOfIndex15;
+                resultDivTemp2.textContent = 'Temp: ' + tempOfIndex15;
+                resultDivWind2.textContent = 'Wind: ' + windOfIndex15;
+                resultDivHumid2.textContent = 'Humidity: ' + humidOfIndex15;
 
-                resultDivDate3.textContent = `Date: Test`;
-                resultDivTemp3.textContent = `Temp: Test`;
-                resultDivWind3.textContent = `Wind: Test`;
-                resultDivHumid3.textContent = `Humidity: Test`;
+                resultDivDate3.textContent = 'Date: ' + dateOfIndex23;
+                resultDivTemp3.textContent = 'Temp: ' + tempOfIndex23;
+                resultDivWind3.textContent = 'Wind: ' + windOfIndex23;
+                resultDivHumid3.textContent = 'Humidity: ' + humidOfIndex23;
 
-                resultDivDate4.textContent = `Date: Test`;
-                resultDivTemp4.textContent = `Temp: Test`;
-                resultDivWind4.textContent = `Wind: Test`;
-                resultDivHumid4.textContent = `Humidity: Test`;
+                resultDivDate4.textContent = 'Date: ' + dateOfIndex31;
+                resultDivTemp4.textContent = 'Temp: ' + tempOfIndex31;
+                resultDivWind4.textContent = 'Wind: ' + windOfIndex31;
+                resultDivHumid4.textContent = 'Humidity: ' + humidOfIndex31;
 
                 containerToday.appendChild(resultDivCity);
                 containerToday.appendChild(resultDivDate);
                 containerToday.appendChild(resultDivTemp);
                 containerToday.appendChild(resultDivWind);
                 containerToday.appendChild(resultDivHumid);
+
+                containerTodayRight.appendChild(resultDivOutlook);
 
                 containerDay1.appendChild(resultDivDate1);
                 containerDay1.appendChild(resultDivTemp1);
@@ -143,7 +172,8 @@ function saveCity(parameter) {
         // const city = localStorage.getItem('userEntry');
         b.textContent = city;
         document.querySelector(".city-data").appendChild(b);
-        b.setAttribute('class', 'buttons');
+        // b.setAttribute('class', 'buttons');
+        b.classList.add('city-button');
     }
     document.querySelector(".city-data").addEventListener("click", function (event) {
         event.preventDefault;
