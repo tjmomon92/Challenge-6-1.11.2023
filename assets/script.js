@@ -22,19 +22,99 @@ function newCity() {
             .then(data => {return data.json()})
             .then(function (data) {
             console.log(data);
-        })
+            })
+            .then(data => {
+                const containerToday = document.getElementById('left');
+                const containerDay1 = document.getElementById('day1');
+                const containerDay2 = document.getElementById('day2');
+                const containerDay3 = document.getElementById('day3');
+                const containerDay4 = document.getElementById('day4');
 
+                const resultDivDate = document.createElement('div');
+                const resultDivTemp = document.createElement('div');
+                const resultDivWind = document.createElement('div');
+                const resultDivHumid = document.createElement('div');
+                const resultDivCity = document.createElement('div');
 
-                //write dom stuff here
-                // const container = document.getElementById('left');
-                // container.innerHTML= '';
+                const resultDivDate1 = document.createElement('div');
+                const resultDivTemp1 = document.createElement('div');
+                const resultDivWind1 = document.createElement('div');
+                const resultDivHumid1 = document.createElement('div');
 
-                // const resultDiv = document.createElement('div');
-                // resultDiv.classList.add('result');
+                const resultDivDate2 = document.createElement('div');
+                const resultDivTemp2 = document.createElement('div');
+                const resultDivWind2 = document.createElement('div');
+                const resultDivHumid2 = document.createElement('div');
 
-                // resultDiv.textContent = ``
-                // })
-            // })
+                const resultDivDate3 = document.createElement('div');
+                const resultDivTemp3 = document.createElement('div');
+                const resultDivWind3 = document.createElement('div');
+                const resultDivHumid3 = document.createElement('div');
+
+                const resultDivDate4 = document.createElement('div');
+                const resultDivTemp4 = document.createElement('div');
+                const resultDivWind4 = document.createElement('div');
+                const resultDivHumid4 = document.createElement('div');
+
+                // resultDivDate.classList.add('result');
+                // resultDivTemp.classList.add('result');
+                // resultDivWind.classList.add('result');
+                // resultDivHumid.classList.add('result');
+
+                resultDivCity.textContent = `City: Test`
+                resultDivDate.textContent = `Date: Test`;
+                resultDivTemp.textContent = `Temp: Test`;
+                resultDivWind.textContent = `Wind: Test`;
+                resultDivHumid.textContent = `Humidity: Test`;
+
+                resultDivDate1.textContent = `Date: Test`;
+                resultDivTemp1.textContent = `Temp: Test`;
+                resultDivWind1.textContent = `Wind: Test`;
+                resultDivHumid1.textContent = `Humidity: Test`;
+
+                resultDivDate2.textContent = `Date: Test`;
+                resultDivTemp2.textContent = `Temp: Test`;
+                resultDivWind2.textContent = `Wind: Test`;
+                resultDivHumid2.textContent = `Humidity: Test`;
+
+                resultDivDate3.textContent = `Date: Test`;
+                resultDivTemp3.textContent = `Temp: Test`;
+                resultDivWind3.textContent = `Wind: Test`;
+                resultDivHumid3.textContent = `Humidity: Test`;
+
+                resultDivDate4.textContent = `Date: Test`;
+                resultDivTemp4.textContent = `Temp: Test`;
+                resultDivWind4.textContent = `Wind: Test`;
+                resultDivHumid4.textContent = `Humidity: Test`;
+
+                containerToday.appendChild(resultDivCity);
+                containerToday.appendChild(resultDivDate);
+                containerToday.appendChild(resultDivTemp);
+                containerToday.appendChild(resultDivWind);
+                containerToday.appendChild(resultDivHumid);
+
+                containerDay1.appendChild(resultDivDate1);
+                containerDay1.appendChild(resultDivTemp1);
+                containerDay1.appendChild(resultDivWind1);
+                containerDay1.appendChild(resultDivHumid1);
+
+                containerDay2.appendChild(resultDivDate2);
+                containerDay2.appendChild(resultDivTemp2);
+                containerDay2.appendChild(resultDivWind2);
+                containerDay2.appendChild(resultDivHumid2);
+
+                containerDay3.appendChild(resultDivDate3);
+                containerDay3.appendChild(resultDivTemp3);
+                containerDay3.appendChild(resultDivWind3);
+                containerDay3.appendChild(resultDivHumid3);
+
+                containerDay4.appendChild(resultDivDate4);
+                containerDay4.appendChild(resultDivTemp4);
+                containerDay4.appendChild(resultDivWind4);
+                containerDay4.appendChild(resultDivHumid4);
+
+            })
+
      .catch(error => {
          console.log(error);
      })
