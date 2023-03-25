@@ -16,14 +16,26 @@ function newCity() {
         if (userEntry !== "") {
             // localStorage.setItem(parameter, " ");
             localStorage.setItem(userEntry, " ");
-            document.querySelector(".city-data").textContent = " ";
+
+            document.getElementById('left').textContent = '';
+            document.getElementById('day1').textContent = '';
+            document.getElementById('day2').textContent = '';
+            document.getElementById('day3').textContent = '';
+            document.getElementById('day4').textContent = '';
         }
         fetch(`https://api.openweathermap.org/data/2.5/forecast/?q=${userEntry}&units=imperial&APPID=d769864f4813769c7a82a33216c211e2`)
-            .then(data => {return data.json()})
+            .then(response => { return response.json() })
             .then(function (data) {
-            console.log(data);
+                console.log(data);
             })
             .then(data => {
+
+                // ** extract all yuor data
+                // const nameOfCity = data.city.name;
+                // const dateOfFirstIndex = data.list[0].dt_txt;
+
+
+
                 const containerToday = document.getElementById('left');
                 const containerDay1 = document.getElementById('day1');
                 const containerDay2 = document.getElementById('day2');
@@ -115,16 +127,17 @@ function newCity() {
 
             })
 
-     .catch(error => {
-         console.log(error);
-     })
-         }
-     let response;
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    let response;
 };
 
 // Function to save search history to page for easy access
 function saveCity(parameter) {
-    for (let i = 0; i< localStorage.length; i++) {
+    document.getElementById('city-data').textContent = '';
+    for (let i = 0; i < localStorage.length; i++) {
         const b = document.createElement("button");
         const city = localStorage.key(i);
         // const city = localStorage.getItem('userEntry');
@@ -132,18 +145,18 @@ function saveCity(parameter) {
         document.querySelector(".city-data").appendChild(b);
         b.setAttribute('class', 'buttons');
     }
-    document.querySelector(".city-data").addEventListener("click",function(event){
+    document.querySelector(".city-data").addEventListener("click", function (event) {
         event.preventDefault;
-            newCity(event.target.innerText)
-            saveCity(event.target.innerText)
-        })
-    };
+        newCity(event.target.innerText)
+        saveCity(event.target.innerText)
+    })
+};
 
 // prevents search data from disappearing on page refresh
 saveCity();
 
 // eventListener on 'Search' button to save city search to localStorage
-document.querySelector("#search-button").addEventListener("click",function(event){
+document.querySelector("#search-button").addEventListener("click", function (event) {
     newCity(event.target.previousElementSibling.value)
     saveCity(event.target.innerText)
 })
