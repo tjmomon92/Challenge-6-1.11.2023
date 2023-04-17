@@ -151,7 +151,9 @@ function newCity() {
                 containerDay4.appendChild(resultDivWind4);
                 containerDay4.appendChild(resultDivHumid4);
 
-                const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
+                // const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
+                const day1Icon = "https://openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
+                console.log(response.list[0].weather[0].icon);
                 // const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@4x.png";
 
                 // const imageCurrent = document.getElementById('imageCurrent');
