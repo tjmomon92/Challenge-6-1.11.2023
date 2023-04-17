@@ -1,32 +1,21 @@
-# <Interactive Work Day Scheduler>
+# <5-Day Weather Application>
 
 ## Description
 
-This project was based around creating script for an easy-to-read, color-coded work day scheduler focused on ease-of-use and functionality. This application functions through the use of local storage to record and save time-sensitive items such as meetings, tasks, and appointments that can be easily reviewed by an employee. Another note-worthy function is the use of color to easily show past, current, and future items for easy and fast review. My goal is for this project to ease the burden of keeping oneself organized in a fast-paced work environment that demands quick turn-around on deadlines. The use of local storage in this application enables an employee to make quick additions to their workday without the fear of losing important task information upon a window refresh. This project was an excellent learning experience, as I not only got practice in using JavaScript, but also got to experiment and play with the versatility of jQuery. I have learned a lot about the different ways that a developer can utilize local storage to meet different requirements, as well as new jQuery syntax to keep my code clean and organized. 
+This application utilizes the OpenWeatherMap API (Check it out [here] (https://openweathermap.org/api)) to create a 5-day forecast based on a given city entered by the user. This application functions throught the use of LocalStorage and third-party APIs to give the user and accurate forecast of the next 5 days for any city entered by the user. This challenge was just that, a challenge! I learned a substantial amount about API calls and how the result data is nested for response-calling. After working with this project, I feel very confident in my ability to incorporate third-party APIs into my applications. My goal for this project was to create a simple and clean application with a little less focus on the UI, and more focus on the quality of my JavaScript. The use of LocalStorage was used to store, recall, and create the additional buttons that are created when the user performs a search. From there, the user search entry is passed through the OpenWeathermap API to call all forecast data to be displayed. During this project I struggled with a bug that caused repeating and duplicate "Search City" buttons to be created, So I had to shut off functionality. In the near future I plan to re-visit this challenge and update the UI and fix this bug.
 
 ## Installation
 
-This application operates entirely in your browser; no installation required for use!
+This application operates entirely in your browser; no installation required for use! Check out the application [here!] ()
 
 ## Usage
 
-In this application, the use of Grey, Red, and Green has been used to denote past time slots, the current timeslot, respectively:
-  ![Screenshot-ColorDemo](https://user-images.githubusercontent.com/118149929/212490193-d205d7da-593a-4191-b327-31ff8c9399f3.png)
+In this application, a user will simply load up the page, enter a desired city into the search bar on the left, and hit "search":
+  ![]()
 
-Once the Work Day Scheduler has been opened in your browser, to save task data to a specific timeslot, simply locate the desired timeslot, enter your task, and hit the save button on the right-hand side of the screen. This will save your inputted task to Local Storage.
-  ![Screenshot-UserInput](https://user-images.githubusercontent.com/118149929/212490217-2d6a81a6-ed87-4fb5-a991-b592098359d9.png)
-
-To verify that your desired input has been successfully saved, open this application in Google Chrome, right-click on the page, and select "Inspect".
-  ![Screenshot-VerifySavedInputStep#1](https://user-images.githubusercontent.com/118149929/212490234-a7ddfcf0-14fe-4964-a5fb-3eee2d72031e.png)
-
-This will open your Google Chrome Dev Tools. Once opened, click on the ">>" dropdown menu, and select "Applications".
-  ![Screenshot-VerifySavedInputStep#2](https://user-images.githubusercontent.com/118149929/212490253-d6761375-9dd1-4c60-8a18-01cb7e1da179.png)
-
-On the left-side of your dev tools, make sure that the "file:///" option is selected under the "Local Storage" down that is directly under the "Storage" section. Your user input will appear on the right-side of your dev tools, giving your inputted "Value" a unique identifier or "Key".
-  ![Screenshot-VerifySavedInputStep#3](https://user-images.githubusercontent.com/118149929/212490277-bb5709c8-46e5-4850-b95f-b04d9cefe93e.png)
-
-If your refresh the page or navigate back to this page, your task data will still be available upon page load. To replace an entry, simply re-save a new input in your desired timeslot. To delete all curent entries, navigate back to your Local Storage as stated above, and hit the prohibition emblem that apears above your "Key" and "Value" sections (This is the circle with the slash through it!).
+Once finished, the user's recent search history will display under the search bar, and the current 5-day weather forecast for the city will be displayed on the right-side of the page. Easy!
+  ![]()
 
 ## Credits
 
-I would like to give a massive shoutout to tutor Faran Navazi for his help in expanding my knowledge of versatile jQuery syntax. 
+I would like to give a massive shoutout to my classmate Gabriel Ess for his help in expanding my knowledge of API call nesting and how to apply the responses. 
