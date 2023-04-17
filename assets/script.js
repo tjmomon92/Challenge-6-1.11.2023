@@ -151,24 +151,30 @@ function newCity() {
                 containerDay4.appendChild(resultDivWind4);
                 containerDay4.appendChild(resultDivHumid4);
 
-                // const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
                 const day1Icon = "https://openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@2x.png";
-                console.log(response.list[0].weather[0].icon);
-                // const day1Icon = "https://api.openweathermap.org/img/wn/"+response.list[0].weather[0].icon+"@4x.png";
+                const day2Icon = "https://openweathermap.org/img/wn/"+response.list[7].weather[0].icon+".png";
+                const day3Icon = "https://openweathermap.org/img/wn/"+response.list[15].weather[0].icon+".png";
+                const day4Icon = "https://openweathermap.org/img/wn/"+response.list[23].weather[0].icon+".png";
+                const day5Icon = "https://openweathermap.org/img/wn/"+response.list[31].weather[0].icon+".png";
 
-                // const imageCurrent = document.getElementById('imageCurrent');
-                // document.getElementById('imageCurrent').src = imageCurrent.src.replace(day1Icon);
-
-                // imageCurrent.setAttribute("src", day1Icon);
-                // const imageCurrent = document.getElementById('imageCurrent');
-                // icon1.setAttribute("src", day1Icon);
-
+                // Created 'main' image source
                 const resultIcon = document.createElement('img');
                 resultIcon.src = day1Icon;
+                const resultIcon2 = document.createElement('img');
+                resultIcon2.src = day2Icon;
+                const resultIcon3 = document.createElement('img');
+                resultIcon3.src = day3Icon;
+                const resultIcon4 = document.createElement('img');
+                resultIcon4.src = day4Icon;
+                const resultIcon5 = document.createElement('img');
+                resultIcon5.src = day5Icon;
+
+                // Displays image for given days outlook
                 containerTodayRight.appendChild(resultIcon);
-
-                console.log(day1Icon);
-
+                containerDay1.appendChild(resultIcon2);
+                containerDay2.appendChild(resultIcon3);
+                containerDay3.appendChild(resultIcon4);
+                containerDay4.appendChild(resultIcon5);
 
             })
 
